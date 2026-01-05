@@ -6,7 +6,7 @@ public class MiniBank {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        MiniBankManager manager = new MiniBankManager(); //creating an object to access the manager class
+        MiniBankManager manager = new MiniBankManager(input); //creating an object to access the manager class
 
         //variable to control the program execution which makes it easier to exit
         boolean running = true;
@@ -14,11 +14,8 @@ public class MiniBank {
         System.out.println("Welcome to Mini Bank");
 
         while (running) {
-            System.out.println("\n\n-------- Menu Options --------");
-            System.out.println("1. Deposit");
-            System.out.println("2. Withdraw");
-            System.out.println("3. Check Balance");
-            System.out.println("4. Exit");
+
+            showMenu();
 
             try {
                 int choice = input.nextInt();
@@ -52,4 +49,13 @@ public class MiniBank {
         }
 
     }
+
+    private static void showMenu(){
+        System.out.println("\n\n-------- Menu Options --------");
+        System.out.println("1. Deposit");
+        System.out.println("2. Withdraw");
+        System.out.println("3. Check Balance");
+        System.out.println("4. Exit");
+    }
+
 }
